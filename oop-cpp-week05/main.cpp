@@ -11,9 +11,21 @@ int main()
         cout << "Invalid number of students!" << endl;
         cout << "Please enter a number between 2 and 20";
     }
+    
     else {
-        cout << n;
+        for(int i = 0; i < n; i++)
+        {
+            cout << "Enter score for students: " << i + 1 << ": ";
+            int score;
+            cin >> score;
+            if(score < 0 || score > 10)
+            {
+                cout << "Invalid input! Please enter a value between 0 and 10: ";
+            }
+            return 0;
+        }
     }
+
 
     return 0;
 }
