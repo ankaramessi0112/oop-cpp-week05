@@ -4,6 +4,7 @@ using namespace std;
 int main()
 {
     int n;
+    double scores[20];
     cout << "How many students?";
     cin >> n;
 
@@ -15,17 +16,24 @@ int main()
     else {
         for(int i = 0; i < n; i++)
         {
-            cout << "Enter score for students: " << i + 1 << ": ";
-            int score;
-            cin >> score;
-            if(score < 0 || score > 10)
+            cin >> scores[i];   
+            if(scores[i] < 0 || scores[i] > 10)
             {
                 cout << "Invalid input! Please enter a value between 0 and 10: ";
+                i--;
             }
-            return 0;
         }
     }
 
+    for (int i = 0; i < n; i++)
+    {
+        cout << "==== STUDENT SCORES ====" << endl;
+        for (int i = 0; i < n; i++)
+        {
+            cout << "Student " << i + 1 << ": " << endl;
+            cout << "Score: " << scores[i] << endl;
+        }
+    }
 
     return 0;
 }
