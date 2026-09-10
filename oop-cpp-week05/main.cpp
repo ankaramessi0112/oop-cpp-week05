@@ -104,5 +104,37 @@ int main()
     cout << "\n===== LONGEST PASS STREAK =====" << endl;
     cout << "Longest pass streak: " << maxStreak << " students" << endl;
 
+    int c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (scores[i] >= 9.0) c5++;
+        else if (scores[i] >= 8.0) c4++;
+        else if (scores[i] >= 6.5) c3++;
+        else if (scores[i] >= 5.0) c2++;
+        else c1++;
+    }
+
+    cout << "\n===== SCORE DISTRIBUTION =====" << endl;
+    
+    cout << "0 - <5   : ";
+    for (int i = 0; i < c1; i++) cout << "*";
+    cout << "  " << c1 << endl;
+
+    cout << "5 - <6.5 : ";
+    for (int i = 0; i < c2; i++) cout << "*";
+    cout << "  " << c2 << endl;
+
+    cout << "6.5 - <8 : ";
+    for (int i = 0; i < c3; i++) cout << "*";
+    cout << "  " << c3 << endl;
+
+    cout << "8 - <9   : ";
+    for (int i = 0; i < c4; i++) cout << "*";
+    cout << "  " << c4 << endl;
+
+    cout << "9 - 10   : ";
+    for (int i = 0; i < c5; i++) cout << "*";
+    cout << "  " << c5 << endl;
+
     return 0;
 }
