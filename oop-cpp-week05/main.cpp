@@ -14,7 +14,6 @@ int main()
         return 0;       
     }
 
-    double scores[20]; 
     for (int i = 0; i < n; i++) {
         cout << "Enter score for student " << i + 1 << ": ";
         cin >> scores[i];
@@ -65,4 +64,27 @@ int main()
 
     cout << "\nHighest score: " << highest << endl;
     cout << "Lowest score : " << lowest << endl;
+
+    cout << "\n===== RESULTS =====" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << "Student " << i + 1 << ": " << scores[i] << " -> ";
+        if (scores[i] >= 9.0) {
+            cout << "Excellent" << endl;
+        } else if (scores[i] >= 8.0) {
+            cout << "Very Good" << endl;
+        } else if (scores[i] >= 6.5) {
+            cout << "Good" << endl;
+        } else if (scores[i] >= 5.0) {
+            cout << "Average" << endl;
+        } else {
+            cout << "Fail" << endl;
+        }
+    }
+
+    cout << "\n===== COMPARISON =====" << endl;
+    for (int i = 1; i < n; i++) {
+        if (scores[i] > scores[i - 1]) {
+            cout << "Student " << i + 1 << " improved compared to Student " << i << endl;
+        }
+    }
 }
