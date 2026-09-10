@@ -54,4 +54,15 @@ int main()
     cout << "Failed : " << failed << " students" << endl;
     cout << "Pass rate: " << passRate << "%" << endl;
     return 0;
+
+    double highest = scores[0];
+    double lowest = scores[0];
+
+    for (int i = 1; i < n; i++) {
+        if (scores[i] > highest) highest = scores[i];
+        if (scores[i] < lowest) lowest = scores[i];
+    }
+
+    cout << "\nHighest score: " << highest << endl;
+    cout << "Lowest score : " << lowest << endl;
 }
