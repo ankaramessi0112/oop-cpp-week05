@@ -52,7 +52,6 @@ int main()
     cout << "Passed : " << passed << " students" << endl;
     cout << "Failed : " << failed << " students" << endl;
     cout << "Pass rate: " << passRate << "%" << endl;
-    return 0;
 
     double highest = scores[0];
     double lowest = scores[0];
@@ -87,4 +86,23 @@ int main()
             cout << "Student " << i + 1 << " improved compared to Student " << i << endl;
         }
     }
+
+    int currentStreak = 0;
+    int maxStreak = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (scores[i] >= 5.0) {
+            currentStreak++;
+            if (currentStreak > maxStreak) {
+                maxStreak = currentStreak;
+            }
+        } else {
+            currentStreak = 0;
+        }
+    }
+
+    cout << "\n===== LONGEST PASS STREAK =====" << endl;
+    cout << "Longest pass streak: " << maxStreak << " students" << endl;
+
+    return 0;
 }
